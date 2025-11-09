@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: auth-service
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hotel_auth
+    username: hotel
+    password: hotel
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: false
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+
+security:
+  jwt:
+    secret: change-me-please-32chars-min
+    expirationSeconds: 3600
+
+

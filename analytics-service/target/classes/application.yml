@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: analytics-service
+server:
+  port: 8084
+kafka:
+  bootstrapServers: localhost:9092
+elasticsearch:
+  hosts: http://localhost:9200
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+
+

@@ -1,0 +1,63 @@
+
+> web-frontend@0.1.0 dev
+> vite
+
+
+  VITE v5.4.8  ready in 136 ms
+
+  ➜  Local:   http://localhost:5999/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+1:31:44 PM [vite] vite.config.ts changed, restarting server...
+1:31:44 PM [vite] server restarted.
+1:31:57 PM [vite] vite.config.ts changed, restarting server...
+1:31:57 PM [vite] server restarted.
+1:31:58 PM [vite] vite.config.ts changed, restarting server...
+1:31:58 PM [vite] server restarted.
+1:33:50 PM [vite] hmr update /src/pages/dashboards/AdminDashboard.tsx, /src/index.css
+1:34:23 PM [vite] hmr update /src/pages/dashboards/ManagerDashboard.tsx, /src/index.css
+1:34:54 PM [vite] hmr update /src/pages/dashboards/ReceptionDashboard.tsx, /src/index.css
+1:35:18 PM [vite] hmr update /src/pages/dashboards/HousekeepingDashboard.tsx, /src/index.css
+1:35:38 PM [vite] hmr update /src/pages/dashboards/GuestDashboard.tsx, /src/index.css
+1:35:42 PM [vite] hmr update /src/pages/Rooms.tsx, /src/index.css
+1:35:48 PM [vite] hmr update /src/pages/Rooms.tsx, /src/index.css
+1:35:52 PM [vite] hmr update /src/pages/Rooms.tsx, /src/index.css
+1:35:55 PM [vite] hmr update /src/pages/Bookings.tsx, /src/index.css
+1:35:59 PM [vite] hmr update /src/pages/Bookings.tsx, /src/index.css
+1:36:13 PM [vite] hmr update /src/pages/Root.tsx, /src/index.css
+1:36:33 PM [vite] hmr update /src/pages/Rooms.tsx, /src/index.css
+1:36:33 PM [vite] hmr update /src/pages/dashboards/AdminDashboard.tsx, /src/index.css
+1:36:33 PM [vite] hmr update /src/pages/dashboards/GuestDashboard.tsx, /src/index.css
+1:36:33 PM [vite] hmr update /src/pages/dashboards/ManagerDashboard.tsx, /src/index.css
+1:36:33 PM [vite] hmr update /src/pages/Root.tsx, /src/index.css
+1:36:33 PM [vite] hmr update /src/pages/Bookings.tsx, /src/index.css
+1:36:33 PM [vite] hmr update /src/pages/dashboards/HousekeepingDashboard.tsx, /src/index.css
+1:36:33 PM [vite] hmr update /src/pages/dashboards/ReceptionDashboard.tsx, /src/index.css
+1:36:41 PM [vite] http proxy error: /auth/login
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+1:36:43 PM [vite] http proxy error: /auth/login
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+1:36:43 PM [vite] http proxy error: /auth/login
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+1:36:44 PM [vite] http proxy error: /auth/login
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+1:36:44 PM [vite] http proxy error: /auth/login
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+1:36:44 PM [vite] http proxy error: /auth/login
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+1:36:51 PM [vite] http proxy error: /auth/login
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)

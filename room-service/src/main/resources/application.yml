@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: room-service
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hotel_room
+    username: hotel
+    password: hotel
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: false
+server:
+  port: 8083
+
+
