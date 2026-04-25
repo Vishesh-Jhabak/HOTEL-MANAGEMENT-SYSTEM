@@ -1,0 +1,200 @@
+===========================================================================
+  SAMPLE OUTPUT — Hotel Management System (MySQL + Python)
+===========================================================================
+
+=================================================================
+  Hotel Management System v1.0.0
+  MySQL + Python Integration Project
+=================================================================
+
+  Connecting to MySQL database...
+  [OK] Connected to MySQL Server version 8.0.36
+  [OK] Database: hotel_management_system
+
+--------------------------------------------------
+  Hotel Management System — Main Menu
+--------------------------------------------------
+  1. Guest Management
+  2. Room Management
+  3. Reservation Management
+  4. Payment Management
+  5. Room Service Management
+  6. Test Database Connection
+  0. Exit
+
+  Enter choice: 1
+
+  --- Guest Management ---
+  1. View All Guests
+  2. View Guest by ID
+  3. Add New Guest
+  4. Update Guest
+  5. Delete Guest
+  0. Back to Main Menu
+
+  Enter choice: 1
+
+  ID | First Name | Last Name | Email                       | Phone      | ID Proof
+  ---+------------+-----------+-----------------------------+------------+---------
+  1  | Rahul      | Sharma    | rahul.sharma@email.com      | 9876543210 | Aadhar
+  2  | Priya      | Patel     | priya.patel@email.com       | 9876543211 | Passport
+  3  | Amit       | Singh     | amit.singh@email.com        | 9876543212 | Aadhar
+  4  | Sneha      | Reddy     | sneha.reddy@email.com       | 9876543213 | PAN Card
+  5  | Vikram     | Joshi     | vikram.joshi@email.com      | 9876543214 | Aadhar
+  6  | Ananya     | Gupta     | ananya.gupta@email.com      | 9876543215 | Passport
+  7  | Rajesh     | Kumar     | rajesh.kumar@email.com      | 9876543216 | Aadhar
+  8  | Meera      | Nair      | meera.nair@email.com        | 9876543217 | PAN Card
+  9  | Arjun      | Deshmukh  | arjun.deshmukh@email.com    | 9876543218 | Aadhar
+  10 | Kavitha    | Iyer      | kavitha.iyer@email.com      | 9876543219 | Passport
+
+  Total: 10 record(s)
+
+===========================================================================
+  Adding a New Guest (CREATE operation)
+===========================================================================
+
+  Enter choice: 3
+
+  --- Add New Guest ---
+  First Name: Deepak
+  Last Name: Verma
+  Email: deepak.verma@email.com
+  Phone: 9876543220
+  Address: 15 Sector 17, Chandigarh
+  ID Proof Type (Aadhar/Passport/PAN Card): Aadhar
+  ID Proof Number: 6789-0123-4567
+  [OK] Guest 'Deepak Verma' added with ID: 11
+
+===========================================================================
+  Viewing Available Rooms (READ operation)
+===========================================================================
+
+  Enter choice: 2
+
+  --- Room Management ---
+  Enter choice: 2
+
+  ID | Room No | Type          | Floor | Price/Night | Amenities
+  ---+---------+---------------+-------+-------------+------------------------------
+  1  | 101     | Single        | 1     | 2500.00     | AC, TV, WiFi
+  3  | 103     | Double        | 1     | 4000.00     | AC, TV, WiFi, Mini Bar
+  4  | 201     | Double        | 2     | 4500.00     | AC, TV, WiFi, Mini Bar, Balcony
+  6  | 203     | Deluxe        | 2     | 6500.00     | AC, TV, WiFi, Mini Bar, Balcony, Room Service
+  8  | 302     | Deluxe        | 3     | 7000.00     | AC, TV, WiFi, Mini Bar, Balcony, Room Service
+  9  | 303     | Suite         | 3     | 12000.00    | AC, TV, WiFi, Mini Bar, Jacuzzi
+  11 | 402     | Suite         | 4     | 15000.00    | AC, TV, WiFi, Mini Bar, Living Room
+  12 | 501     | Presidential  | 5     | 25000.00    | AC, TV, WiFi, Private Pool
+  15 | 204     | Double        | 2     | 5000.00     | AC, TV, WiFi, Mini Bar, Workspace
+
+  Total: 9 record(s)
+
+===========================================================================
+  Viewing Reservations with JOINs (READ with JOIN operation)
+===========================================================================
+
+  Enter choice: 3
+
+  --- Reservation Management ---
+  Enter choice: 1
+
+  Res ID | Guest          | Room | Type          | Check-In   | Check-Out  | Status      | Amount
+  -------+----------------+------+---------------+------------+------------+-------------+-----------
+  1      | Rahul Sharma   | 102  | Single        | 2025-04-20 | 2025-04-23 | Checked-In  | 7500.00
+  2      | Priya Patel    | 202  | Double        | 2025-04-21 | 2025-04-25 | Checked-In  | 18000.00
+  3      | Amit Singh     | 401  | Suite         | 2025-04-19 | 2025-04-24 | Checked-In  | 60000.00
+  4      | Sneha Reddy    | 502  | Presidential  | 2025-04-18 | 2025-04-22 | Checked-In  | 100000.00
+  5      | Vikram Joshi   | 103  | Double        | 2025-04-25 | 2025-04-28 | Confirmed   | 12000.00
+  6      | Ananya Gupta   | 203  | Deluxe        | 2025-04-25 | 2025-04-27 | Confirmed   | 13000.00
+  7      | Rajesh Kumar   | 303  | Suite         | 2025-04-26 | 2025-04-30 | Confirmed   | 48000.00
+  8      | Meera Nair     | 101  | Single        | 2025-04-10 | 2025-04-14 | Checked-Out | 10000.00
+  9      | Arjun Deshmukh | 103  | Double        | 2025-04-05 | 2025-04-08 | Checked-Out | 12000.00
+  10     | Kavitha Iyer   | 302  | Deluxe        | 2025-04-15 | 2025-04-17 | Cancelled   | 14000.00
+
+  Total: 10 record(s)
+
+===========================================================================
+  Update Operation
+===========================================================================
+
+  Enter choice: 4
+  Guest ID to update: 1
+  New Phone (press Enter to skip): 9999888877
+  New Address (press Enter to skip): 100 Marine Drive, Mumbai
+  New Email (press Enter to skip):
+  [OK] Guest ID 1 updated successfully.
+
+===========================================================================
+  Delete Operation
+===========================================================================
+
+  Enter choice: 5
+  Guest ID to delete: 11
+  Are you sure? (y/n): y
+  [OK] Guest ID 11 deleted. (Cascade applied)
+
+===========================================================================
+  Payment Records
+===========================================================================
+
+  Pay ID | Guest          | Room | Amount    | Method      | Date                | Status
+  -------+----------------+------+-----------+-------------+---------------------+-----------
+  1      | Rahul Sharma   | 102  | 7500.00   | UPI         | 2025-04-20 14:30:00 | Completed
+  2      | Priya Patel    | 202  | 18000.00  | Credit Card | 2025-04-21 10:15:00 | Completed
+  3      | Amit Singh     | 401  | 60000.00  | Debit Card  | 2025-04-19 09:00:00 | Completed
+  4      | Sneha Reddy    | 502  | 50000.00  | Net Banking | 2025-04-18 11:30:00 | Completed
+  5      | Sneha Reddy    | 502  | 50000.00  | UPI         | 2025-04-18 11:35:00 | Pending
+  6      | Vikram Joshi   | 103  | 12000.00  | Credit Card | 2025-04-24 16:00:00 | Completed
+  7      | Meera Nair     | 101  | 10000.00  | Cash        | 2025-04-14 12:00:00 | Completed
+  8      | Arjun Deshmukh | 103  | 12000.00  | UPI         | 2025-04-08 11:00:00 | Completed
+
+  Total: 8 record(s)
+
+===========================================================================
+  Exiting
+===========================================================================
+
+  Enter choice: 0
+
+  Thank you for using the Hotel Management System!
+  Goodbye!
+
+===========================================================================
+  SQL Query Outputs (run directly in MySQL)
+===========================================================================
+
+-- Query: Room count and average price by type (from 04_select_queries.sql)
+
++---------------+-------------+-----------+-----------+-----------+
+| room_type     | total_rooms | avg_price | min_price | max_price |
++---------------+-------------+-----------+-----------+-----------+
+| Presidential  |           2 |  25000.00 |  25000.00 |  25000.00 |
+| Suite         |           3 |  13000.00 |  12000.00 |  15000.00 |
+| Deluxe        |           3 |   6833.33 |   6500.00 |   7000.00 |
+| Double        |           4 |   4500.00 |   4000.00 |   5000.00 |
+| Single        |           3 |   2600.00 |   2500.00 |   2800.00 |
++---------------+-------------+-----------+-----------+-----------+
+
+-- Query: Total payment per guest
+
++----------------+----------------+------------+-----------------+
+| guest_name     | total_payments | total_paid | payment_methods |
++----------------+----------------+------------+-----------------+
+| Sneha Reddy    |              2 |  100000.00 | Net Banking,UPI |
+| Amit Singh     |              1 |   60000.00 | Debit Card      |
+| Priya Patel    |              1 |   18000.00 | Credit Card     |
+| Vikram Joshi   |              1 |   12000.00 | Credit Card     |
+| Arjun Deshmukh |              1 |   12000.00 | UPI             |
+| Meera Nair     |              1 |   10000.00 | Cash            |
+| Rahul Sharma   |              1 |    7500.00 | UPI             |
++----------------+----------------+------------+-----------------+
+
+-- Query: Currently occupied rooms with guest details
+
++-------------+-----------+-------+----------------+------------+------------+------------+--------------+
+| room_number | room_type | floor | guest_name     | phone      | check_in   | check_out  | nights_booked|
++-------------+-----------+-------+----------------+------------+------------+------------+--------------+
+| 102         | Single    |     1 | Rahul Sharma   | 9876543210 | 2025-04-20 | 2025-04-23 |            3 |
+| 202         | Double    |     2 | Priya Patel    | 9876543211 | 2025-04-21 | 2025-04-25 |            4 |
+| 401         | Suite     |     4 | Amit Singh     | 9876543212 | 2025-04-19 | 2025-04-24 |            5 |
+| 502         | President.|     5 | Sneha Reddy    | 9876543213 | 2025-04-18 | 2025-04-22 |            4 |
++-------------+-----------+-------+----------------+------------+------------+------------+--------------+

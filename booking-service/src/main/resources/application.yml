@@ -4,17 +4,18 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:postgresql://localhost:5432/hotel_booking
+    url: jdbc:mysql://localhost:3306/hotel_booking?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: hotel
     password: hotel
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
     show-sql: false
 server:
   port: 8082
-
 
