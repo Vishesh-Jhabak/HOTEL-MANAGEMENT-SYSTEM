@@ -10,8 +10,8 @@ DB_CONFIG = {
     "host": "localhost",       # MySQL server address
     "port": 3306,              # MySQL port (default: 3306)
     "user": "root",            # MySQL username
-    "password": "",            # MySQL password (empty for default root)
-    "database": "hotel_management_system",  # Database name
+    "password": "1234",        # MySQL password (empty for default root)
+    "database": "hotel_management",  # Database name
 }
 
 # Display name for the application

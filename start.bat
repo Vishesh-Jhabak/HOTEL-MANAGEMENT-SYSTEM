@@ -62,10 +62,10 @@ echo.
 :: 1b. Create databases and user if needed
 :: ---------------------------------------------------------------
 echo  Setting up databases...
-"%MYSQL_BIN%\mysql.exe" -u root --skip-password -e "CREATE DATABASE IF NOT EXISTS hotel_auth; CREATE DATABASE IF NOT EXISTS hotel_booking; CREATE DATABASE IF NOT EXISTS hotel_room; CREATE USER IF NOT EXISTS 'hotel'@'localhost' IDENTIFIED BY 'hotel'; GRANT ALL PRIVILEGES ON hotel_auth.* TO 'hotel'@'localhost'; GRANT ALL PRIVILEGES ON hotel_booking.* TO 'hotel'@'localhost'; GRANT ALL PRIVILEGES ON hotel_room.* TO 'hotel'@'localhost'; FLUSH PRIVILEGES;" 2>nul
+python -c "import mysql.connector; c=mysql.connector.connect(host='localhost', user='root', password='1234'); cur=c.cursor(); cur.execute('CREATE DATABASE IF NOT EXISTS hotel_auth'); cur.execute('CREATE DATABASE IF NOT EXISTS hotel_booking'); cur.execute('CREATE DATABASE IF NOT EXISTS hotel_room'); cur.execute('CREATE USER IF NOT EXISTS \'hotel\'@\'localhost\' IDENTIFIED BY \'hotel\''); cur.execute('GRANT ALL PRIVILEGES ON hotel_auth.* TO \'hotel\'@\'localhost\''); cur.execute('GRANT ALL PRIVILEGES ON hotel_booking.* TO \'hotel\'@\'localhost\''); cur.execute('GRANT ALL PRIVILEGES ON hotel_room.* TO \'hotel\'@\'localhost\''); cur.execute('FLUSH PRIVILEGES')" 2>nul
 if %ERRORLEVEL% neq 0 (
     color 0C
-    echo  ERROR: Could not create databases. Check MySQL root access.
+    echo  ERROR: Could not create databases. Make sure Python mysql.connector is installed and MySQL is accessible.
     pause
     exit /b 1
 )

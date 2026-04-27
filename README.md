@@ -28,7 +28,7 @@ The JAVA HOTEL MANAGEMENT SYSTEM is a complete solution for modern hotel operati
 #### 1. **Clone the Repository**
 ```bash
 git clone <repository-url>
-cd "jhabak app"
+cd HOTEL-MANAGEMENT-SYSTEM
 ```
 
 #### 2. **Backend Setup (Spring Boot Services)**
@@ -703,16 +703,13 @@ curl http://localhost:8082/api/bookings
 ### 🚀 **Quick Start (TL;DR)**
 
 ```bash
-# 1. Clone and build
+# 1. Clone the repository
 git clone <repository-url>
-cd "jhabak app"
-mvn clean install
-
-# 2. Start everything (Linux/Mac)
-./start-all.sh
+cd HOTEL-MANAGEMENT-SYSTEM
 
 # 2. Start everything (Windows)
-start-all.bat
+# This automatically builds the project, starts MySQL, backend services, and frontend
+start.bat
 
 # 3. Access the system
 # Web Interface: http://localhost:5173
