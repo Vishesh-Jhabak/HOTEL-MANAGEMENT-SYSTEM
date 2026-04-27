@@ -108,28 +108,30 @@ export interface HotelDataState {
 const HotelDataContext = createContext<HotelDataState | undefined>(undefined)
 
 export function HotelDataProvider({ children }: { children: ReactNode }) {
-  const [rooms, setRooms] = useState<RoomStatus[]>([
-    { roomNumber: '101', status: 'available', type: 'Standard', basePrice: 120, lastCleaned: '2025-01-17T09:00:00Z' },
-    { roomNumber: '102', status: 'cleaning', type: 'Deluxe', basePrice: 180, cleaningStaff: 'Staff-001', assignedStaff: 'Sunita Devi' },
-    { roomNumber: '103', status: 'occupied', type: 'Standard', basePrice: 120 },
-    { roomNumber: '104', status: 'maintenance', type: 'Suite', basePrice: 300, maintenanceIssues: ['AC Repair'], assignedStaff: 'Meera Singh' },
-    { roomNumber: '105', status: 'available', type: 'Standard', basePrice: 120, lastCleaned: '2025-01-17T10:30:00Z' },
-    { roomNumber: '106', status: 'out-of-order', type: 'Deluxe', basePrice: 180, maintenanceIssues: ['Plumbing Issue'] },
-    { roomNumber: '201', status: 'occupied', type: 'Deluxe', basePrice: 180 },
-    { roomNumber: '202', status: 'available', type: 'Standard', basePrice: 120, lastCleaned: '2025-01-17T11:00:00Z' },
-    { roomNumber: '203', status: 'cleaning', type: 'Suite', basePrice: 300, cleaningStaff: 'Staff-002', assignedStaff: 'Ravi Kumar' },
-    { roomNumber: '204', status: 'occupied', type: 'Deluxe', basePrice: 180 },
-    { roomNumber: '205', status: 'occupied', type: 'Suite', basePrice: 300 },
-    { roomNumber: '206', status: 'available', type: 'Standard', basePrice: 120, lastCleaned: '2025-01-17T12:00:00Z' },
-    { roomNumber: '301', status: 'available', type: 'Penthouse', basePrice: 600, lastCleaned: '2025-01-17T08:00:00Z' },
-    { roomNumber: '302', status: 'occupied', type: 'Suite', basePrice: 300 },
-    { roomNumber: '303', status: 'available', type: 'Deluxe', basePrice: 180, lastCleaned: '2025-01-17T07:30:00Z' },
-    { roomNumber: '304', status: 'maintenance', type: 'Standard', basePrice: 120, maintenanceIssues: ['WiFi Issue'] },
-    { roomNumber: '401', status: 'occupied', type: 'Penthouse', basePrice: 600 },
-    { roomNumber: '402', status: 'available', type: 'Suite', basePrice: 300, lastCleaned: '2025-01-17T06:00:00Z' },
-    { roomNumber: '403', status: 'cleaning', type: 'Deluxe', basePrice: 180, cleaningStaff: 'Staff-003', assignedStaff: 'Sunita Devi' },
-    { roomNumber: '404', status: 'available', type: 'Standard', basePrice: 120, lastCleaned: '2025-01-17T05:30:00Z' },
-  ])
+  const [rooms, setRooms] = useState<RoomStatus[]>([])
+
+  useEffect(() => {
+    const fetchRooms = async () => {
+      try {
+        const response = await fetch('http://localhost:8083/rooms')
+        if (response.ok) {
+          const res = await response.json()
+          if (res.data && Array.isArray(res.data)) {
+            const mappedRooms = res.data.map((r: any) => ({
+              roomNumber: r.roomNumber,
+              status: r.status ? r.status.toLowerCase() : 'available',
+              type: r.categoryId === 1 ? 'Standard' : r.categoryId === 2 ? 'Deluxe' : 'Suite',
+              basePrice: r.basePrice || 100
+            }))
+            setRooms(mappedRooms)
+          }
+        }
+      } catch (error) {
+        console.error('Failed to fetch rooms from backend:', error)
+      }
+    }
+    fetchRooms()
+  }, [])
 
   const [housekeepingTasks, setHousekeepingTasks] = useState<HousekeepingTask[]>([
     {

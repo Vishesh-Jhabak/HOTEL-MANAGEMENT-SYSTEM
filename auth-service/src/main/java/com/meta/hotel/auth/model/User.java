@@ -19,6 +19,12 @@ public class User {
     @Column(nullable = false, length = 50)
     private Role role = Role.GUEST;
 
+    @Column(name = "staff_id")
+    private Long staffId;
+
+    @Column(name = "customer_id")
+    private Long customerId;
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public String getUsername() { return username; }
@@ -27,6 +33,10 @@ public class User {
     public void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
     public Role getRole() { return role; }
     public void setRole(Role role) { this.role = role; }
+    public Long getStaffId() { return staffId; }
+    public void setStaffId(Long staffId) { this.staffId = staffId; }
+    public Long getCustomerId() { return customerId; }
+    public void setCustomerId(Long customerId) { this.customerId = customerId; }
 }
 
 

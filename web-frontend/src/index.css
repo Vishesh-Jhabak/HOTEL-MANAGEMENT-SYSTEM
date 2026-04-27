@@ -72,3 +72,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Fix for form elements inheriting white text but having light backgrounds */
+select, option, input, textarea {
+  color: #0f172a !important; /* slate-900 for dark readable text */
+  background-color: #ffffff;
+}

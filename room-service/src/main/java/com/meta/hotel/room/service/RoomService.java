@@ -1,7 +1,6 @@
 package com.meta.hotel.room.service;
 
 import com.meta.hotel.room.domain.Room;
-import com.meta.hotel.room.domain.RoomStatus;
 import com.meta.hotel.room.repository.RoomRepository;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +19,7 @@ public class RoomService {
     }
 
     public List<Room> listAvailable() {
-        return roomRepository.findByStatus(RoomStatus.AVAILABLE);
+        return roomRepository.findByStatus("Available");
     }
 
     public Room create(Room room) {

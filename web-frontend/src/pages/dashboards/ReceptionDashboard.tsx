@@ -226,7 +226,7 @@ export default function ReceptionDashboard() {
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                     <h2 className="text-2xl font-bold mb-4">Guest Requests</h2>
                     <div className="space-y-3 max-h-96 overflow-y-auto">
-                      {guestServices.filter(service => service.status === 'pending').map(service => (
+                      {guestServices.filter(service => service.status === 'requested').map(service => (
                         <div key={service.id} className="bg-white/5 rounded-lg p-4 border border-white/10">
                           <div className="flex justify-between items-start mb-2">
                             <div>
@@ -235,7 +235,7 @@ export default function ReceptionDashboard() {
                             </div>
                             <span className={`px-2 py-1 rounded-full text-xs ${
                               service.status === 'completed' ? 'bg-green-500/20 text-green-400' :
-                              service.status === 'pending' ? 'bg-yellow-500/20 text-yellow-400' :
+                              service.status === 'requested' ? 'bg-yellow-500/20 text-yellow-400' :
                               'bg-red-500/20 text-red-400'
                             }`}>
                               {service.status}
@@ -275,7 +275,7 @@ export default function ReceptionDashboard() {
                           </div>
                         </div>
                       ))}
-                      {guestServices.filter(service => service.status === 'pending').length === 0 && (
+                      {guestServices.filter(service => service.status === 'requested').length === 0 && (
                         <div className="text-center py-8 text-slate-400">
                           <p className="text-sm">No pending guest requests</p>
                         </div>

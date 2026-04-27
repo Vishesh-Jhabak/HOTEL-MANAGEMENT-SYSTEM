@@ -1,9 +1,7 @@
 C:\Users\vishe\OneDrive\Desktop\HOTEL-MANAGEMENT-SYSTEM\room-service\src\main\java\com\meta\hotel\room\config\CorsConfig.java
 C:\Users\vishe\OneDrive\Desktop\HOTEL-MANAGEMENT-SYSTEM\room-service\src\main\java\com\meta\hotel\room\config\OpenApiConfig.java
-C:\Users\vishe\OneDrive\Desktop\HOTEL-MANAGEMENT-SYSTEM\room-service\src\main\java\com\meta\hotel\room\config\RoomDataSeeder.java
 C:\Users\vishe\OneDrive\Desktop\HOTEL-MANAGEMENT-SYSTEM\room-service\src\main\java\com\meta\hotel\room\controller\RoomController.java
 C:\Users\vishe\OneDrive\Desktop\HOTEL-MANAGEMENT-SYSTEM\room-service\src\main\java\com\meta\hotel\room\domain\Room.java
-C:\Users\vishe\OneDrive\Desktop\HOTEL-MANAGEMENT-SYSTEM\room-service\src\main\java\com\meta\hotel\room\domain\RoomStatus.java
 C:\Users\vishe\OneDrive\Desktop\HOTEL-MANAGEMENT-SYSTEM\room-service\src\main\java\com\meta\hotel\room\repository\RoomRepository.java
 C:\Users\vishe\OneDrive\Desktop\HOTEL-MANAGEMENT-SYSTEM\room-service\src\main\java\com\meta\hotel\room\RoomServiceApplication.java
 C:\Users\vishe\OneDrive\Desktop\HOTEL-MANAGEMENT-SYSTEM\room-service\src\main\java\com\meta\hotel\room\service\RoomService.java

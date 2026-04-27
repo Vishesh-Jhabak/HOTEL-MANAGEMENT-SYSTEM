@@ -5,6 +5,8 @@ type Role = 'ADMIN' | 'MANAGER' | 'RECEPTIONIST' | 'GUEST' | 'HOUSEKEEPING'
 type User = {
   username: string
   role: Role
+  staffId?: number
+  customerId?: number
 }
 
 type AuthState = {
@@ -24,7 +26,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (!token) { setUser(null); return }
     try {
       const payload = JSON.parse(atob(token.split('.')[1])) as any
-      setUser({ username: payload.sub, role: payload.role as Role })
+      setUser({ 
+        username: payload.sub, 
+        role: payload.role as Role,
+        staffId: payload.staffId,
+        customerId: payload.customerId
+      })
     } catch { setUser(null) }
   }, [token])
 

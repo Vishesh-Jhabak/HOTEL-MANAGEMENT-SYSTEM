@@ -33,11 +33,16 @@ public class JwtService {
         this.expirationSeconds = expirationSeconds;
     }
 
-    public String generateToken(String username, Role role) {
+    public String generateToken(com.meta.hotel.auth.model.User user) {
         Instant now = Instant.now();
+        java.util.Map<String, Object> claims = new java.util.HashMap<>();
+        claims.put("role", user.getRole().name());
+        if (user.getStaffId() != null) claims.put("staffId", user.getStaffId());
+        if (user.getCustomerId() != null) claims.put("customerId", user.getCustomerId());
+        
         return Jwts.builder()
-                .setSubject(username)
-                .addClaims(Map.of("role", role.name()))
+                .setSubject(user.getUsername())
+                .addClaims(claims)
                 .setIssuedAt(Date.from(now))
                 .setExpiration(Date.from(now.plusSeconds(expirationSeconds)))
                 .signWith(key, SignatureAlgorithm.HS256)

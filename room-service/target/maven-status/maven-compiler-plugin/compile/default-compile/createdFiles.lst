@@ -3,8 +3,6 @@ com\meta\hotel\room\domain\Room.class
 com\meta\hotel\room\config\OpenApiConfig.class
 com\meta\hotel\room\repository\RoomRepository.class
 com\meta\hotel\room\config\CorsConfig.class
-com\meta\hotel\room\config\RoomDataSeeder.class
 com\meta\hotel\room\config\CorsConfig$1.class
 com\meta\hotel\room\RoomServiceApplication.class
-com\meta\hotel\room\domain\RoomStatus.class
 com\meta\hotel\room\service\RoomService.class

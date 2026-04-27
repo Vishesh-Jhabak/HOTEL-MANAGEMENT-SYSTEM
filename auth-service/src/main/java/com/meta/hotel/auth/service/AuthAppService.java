@@ -29,13 +29,13 @@ public class AuthAppService {
         u.setPasswordHash(encoder.encode(password));
         u.setRole(role == null ? Role.GUEST : role);
         users.save(u);
-        return jwtService.generateToken(u.getUsername(), u.getRole());
+        return jwtService.generateToken(u);
     }
 
     public Optional<String> login(String username, String password) {
         return users.findByUsername(username)
                 .filter(u -> encoder.matches(password, u.getPasswordHash()))
-                .map(u -> jwtService.generateToken(u.getUsername(), u.getRole()));
+                .map(u -> jwtService.generateToken(u));
     }
 }
 
